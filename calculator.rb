@@ -36,6 +36,10 @@ class Calculator
   def percent(number)
     return number / 100
   end
+
+  def reciprocal(number)
+    return 1.0 / number
+  end
 end
 
 RSpec.describe Calculator do
@@ -119,6 +123,13 @@ RSpec.describe Calculator do
     it 'should move the decimal 2 places to the left' do 
       calculator = Calculator.new 
       expect(calculator.percent(100)).to eq(1) 
+    end
+  end
+
+  describe '#reciprocal' do 
+    it 'should return the quotient of 1 divided by the number' do 
+      calculator = Calculator.new 
+      expect(calculator.reciprocal(5)).to eq(0.2)
     end
   end
 end

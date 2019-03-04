@@ -40,6 +40,10 @@ class Calculator
   def reciprocal(number)
     return 1.0 / number
   end
+
+  def reverse_string(number)
+    return number.to_s.reverse
+  end
 end
 
 RSpec.describe Calculator do
@@ -130,6 +134,13 @@ RSpec.describe Calculator do
     it 'should return the quotient of 1 divided by the number' do 
       calculator = Calculator.new 
       expect(calculator.reciprocal(5)).to eq(0.2)
+    end
+  end
+
+  describe '#reverse_string' do 
+    it 'should return the characters in the given number in reverse order' do 
+      calculator = Calculator.new
+      expect(calculator.reverse_string(58008)).to eq("80085")
     end
   end
 end
